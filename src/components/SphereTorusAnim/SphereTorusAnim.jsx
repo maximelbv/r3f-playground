@@ -46,24 +46,18 @@ const Torus = ({ rotation, position, color, args }) => {
   );
 };
 
-const Frame = () => {
+const SphereTorusAnim = () => {
   return (
-    <div style={{ width: "100svw", height: "100svh" }}>
-      <Canvas>
-        <ambientLight intensity={2} />
-        <directionalLight position={[0, 0, 5]} />
-        <group rotation={[0, 0, 0]}>
-          <Sphere position={[3, 0, 0]} color={"#1874F2"} args={[1, 64, 32]} />
-          <Torus
-            rotation={[0, 2, 0]}
-            position={[0, 0, 0]}
-            color={"#f2a918"}
-            args={[1.2, 0.2, 30, 30]}
-          />
-        </group>
-      </Canvas>
-    </div>
+    <group rotation={[0, 0, 0]}>
+      <Sphere position={[3, 0, 0]} color={"#1874F2"} args={[1, 64, 32]} />
+      <Torus
+        rotation={[0, 2, 0]}
+        position={[0, 0, 0]}
+        color={"#f2a918"}
+        args={[1.2, 0.2, 30, 30]}
+      />
+    </group>
   );
 };
 
-export default Frame;
+export default SphereTorusAnim;

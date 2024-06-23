@@ -1,9 +1,12 @@
-import Frame from "./components/Frame/Frame";
+import FrameLayout from "./Layouts/FrameLayout/FrameLayout";
+import SphereTorusAnim from "./components/SphereTorusAnim/SphereTorusAnim";
 
 function App() {
   return (
     <>
-      <Frame />
+      <FrameLayout>
+        <SphereTorusAnim />
+      </FrameLayout>
     </>
   );
 }
