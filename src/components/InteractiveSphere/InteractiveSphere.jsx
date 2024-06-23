@@ -1,3 +1,4 @@
+import { MeshWobbleMaterial, OrbitControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
 import { useRef } from "react";
@@ -7,7 +8,7 @@ const InteractiveSphere = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   useFrame((state, delta) => {
-    isHovered && (sphereRef.current.rotation.y += delta * 0.2);
+    sphereRef.current.rotation.y += delta * 0.5;
   });
 
   const handleHover = (event) => {
@@ -20,14 +21,20 @@ const InteractiveSphere = () => {
   };
 
   return (
-    <mesh
-      ref={sphereRef}
-      onPointerEnter={handleHover}
-      onPointerLeave={handleQuitHover}
-    >
-      <sphereGeometry />
-      <meshBasicMaterial color={"red"} wireframe />
-    </mesh>
+    <>
+      <mesh
+        ref={sphereRef}
+        onPointerEnter={handleHover}
+        onPointerLeave={handleQuitHover}
+      >
+        <boxGeometry />
+        <MeshWobbleMaterial
+          color={isHovered ? "#4f81e4" : "#ba4fe4"}
+          speed={3}
+        />
+      </mesh>
+      <OrbitControls />
+    </>
   );
 };
 

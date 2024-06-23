@@ -1,11 +1,14 @@
 import FrameLayout from "./Layouts/FrameLayout/FrameLayout";
+import Scene from "./Layouts/Scene/Scene";
 import InteractiveSphere from "./components/InteractiveSphere/InteractiveSphere";
 
 function App() {
   return (
     <>
       <FrameLayout>
-        <InteractiveSphere />
+        <Scene>
+          <InteractiveSphere />
+        </Scene>
       </FrameLayout>
     </>
   );
