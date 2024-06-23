@@ -1,8 +1,9 @@
 import { Canvas } from "@react-three/fiber";
+import "./styles.css";
 
 const FrameLayout = ({ children }) => {
   return (
-    <div style={{ width: "100svw", height: "100svh" }}>
+    <div className="layout" style={{ width: "100svw", height: "100svh" }}>
       <Canvas>{children}</Canvas>
     </div>
   );

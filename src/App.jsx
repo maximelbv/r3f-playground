@@ -4,13 +4,11 @@ import InteractiveSphere from "./components/InteractiveSphere/InteractiveSphere"
 
 function App() {
   return (
-    <>
-      <FrameLayout>
-        <Scene>
-          <InteractiveSphere />
-        </Scene>
-      </FrameLayout>
-    </>
+    <FrameLayout>
+      <Scene>
+        <InteractiveSphere />
+      </Scene>
+    </FrameLayout>
   );
 }
 
